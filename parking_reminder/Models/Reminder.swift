@@ -11,12 +11,22 @@ import UIKit
 class Reminder {
     //  Properties
     var time: Date
-    var days: Array<String>
+    var days: Array<DaysOfWeek>
     
     //  Init
-    init(time: Date, days: Array<String>) {
+    init(time: Date, days: Array<DaysOfWeek>) {
         self.time = time
         self.days = days
     }
     
+}
+
+enum DaysOfWeek {
+    case Monday
+    case Tuesday
+    case Wedensday
+    case Thursday
+    case Friday
+    case Saturday
+    case Sunday
 }
