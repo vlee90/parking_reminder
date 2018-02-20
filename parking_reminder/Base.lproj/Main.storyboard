@@ -33,14 +33,36 @@
                     <view key="view" contentMode="scaleToFill" id="Vpx-94-X61">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meT-6M-FQV">
+                                <rect key="frame" x="172" y="588" width="31" height="30"/>
+                                <state key="normal" title="Park"/>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HSu-vq-YeD" firstAttribute="trailing" secondItem="Rsg-vQ-bhY" secondAttribute="trailing" id="1jR-49-0ew"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="45U-CE-Vww"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="HSu-vq-YeD" secondAttribute="top" id="Bhc-GF-Wkf"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="iXy-Sx-xka"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="top" secondItem="Rsg-vQ-bhY" secondAttribute="bottom" id="jr3-N0-ZQu"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="leading" secondItem="HSu-vq-YeD" secondAttribute="leading" id="lTx-Ee-yDA"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="bottom" secondItem="HSu-vq-YeD" secondAttribute="bottom" id="ptI-DO-iPR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HSu-vq-YeD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Iy1-hi-Sk4"/>
+                    <connections>
+                        <outlet property="mapView" destination="Rsg-vQ-bhY" id="t7n-mJ-BGF"/>
+                        <outlet property="parkButton" destination="meT-6M-FQV" id="I9d-5Z-sLS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8m2-c6-J4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-536"/>
+            <point key="canvasLocation" x="564" y="-536.58170914542734"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="egl-SD-S7s">
