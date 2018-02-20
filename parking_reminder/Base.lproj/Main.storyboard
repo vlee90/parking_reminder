@@ -37,6 +37,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meT-6M-FQV">
                                 <rect key="frame" x="172" y="588" width="31" height="30"/>
                                 <state key="normal" title="Park"/>
+                                <connections>
+                                    <action selector="parkButtonPressed:" destination="uXZ-ud-Tbe" eventType="touchUpInside" id="wNg-H8-VTa"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="568"/>
