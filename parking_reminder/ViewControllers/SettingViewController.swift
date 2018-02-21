@@ -20,6 +20,14 @@ class SettingViewController: UIViewController {
         self.bottonTableView.tag = 1
         self.topTableView.dataSource = self
         self.bottonTableView.dataSource = self
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminderButtonPressed))
+    }
+    
+    @objc func addReminderButtonPressed() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let createVC = storyboard.instantiateViewController(withIdentifier: "createReminderVC")
+        self.navigationController?.pushViewController(createVC, animated: true)
     }
 }
 

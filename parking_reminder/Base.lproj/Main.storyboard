@@ -80,17 +80,145 @@
         <!--Create Reminder View Controller-->
         <scene sceneID="7Sc-0Z-ONe">
             <objects>
-                <viewController id="c6r-Oi-xbL" customClass="CreateReminderViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createReminderVC" id="c6r-Oi-xbL" customClass="CreateReminderViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XS9-TV-0yO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-Qe-HjN">
+                                <rect key="frame" x="0.0" y="239" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="540937904.07759905">
+                                    <!--2018-02-21 20:31:44 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6il-Sv-ntv" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="6.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="lrn-K6-RLY"/>
+                                    <constraint firstAttribute="height" constant="44" id="tDh-WQ-13L"/>
+                                </constraints>
+                                <state key="normal" title="S"/>
+                                <connections>
+                                    <action selector="sundayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="mXx-4i-JdY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iC2-Aq-uqJ" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="1sU-US-Wmj"/>
+                                    <constraint firstAttribute="height" constant="44" id="qHO-tD-QCR"/>
+                                </constraints>
+                                <state key="normal" title="M"/>
+                                <connections>
+                                    <action selector="mondayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="FNn-xU-mLM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkU-QT-Uge" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="btj-Tr-QrS"/>
+                                    <constraint firstAttribute="height" constant="44" id="gTw-OD-WIR"/>
+                                </constraints>
+                                <state key="normal" title="T"/>
+                                <connections>
+                                    <action selector="tuesdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="5u5-zY-RJe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-QC-WuG" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="218.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2No-6g-dOy"/>
+                                    <constraint firstAttribute="width" constant="44" id="IYk-C1-O27"/>
+                                </constraints>
+                                <state key="normal" title="T"/>
+                                <connections>
+                                    <action selector="thursdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="S9O-88-qEn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93s-qr-pox" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="271.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="A3o-cE-xbw"/>
+                                    <constraint firstAttribute="height" constant="44" id="E0C-B4-cpq"/>
+                                </constraints>
+                                <state key="normal" title="F"/>
+                                <connections>
+                                    <action selector="fridayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="2UG-m3-CaH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-Jo-ZVp" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="324.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2fV-8b-KEf"/>
+                                    <constraint firstAttribute="width" constant="44" id="Etj-TD-BWn"/>
+                                </constraints>
+                                <state key="normal" title="S"/>
+                                <connections>
+                                    <action selector="saturdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="H33-g1-9Vy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCf-e1-gIk" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="165.5" y="70" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="0bT-Ih-IQ9"/>
+                                    <constraint firstAttribute="height" constant="44" id="F0Q-em-RGb"/>
+                                </constraints>
+                                <state key="normal" title="W"/>
+                                <connections>
+                                    <action selector="wednesdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="X1d-yx-O6q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MN-dN-xyQ">
+                                <rect key="frame" x="165" y="530" width="46" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5D3-RU-YtY"/>
+                                </constraints>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="TNr-kL-CnL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JkU-QT-Uge" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="2oT-Z8-yTf"/>
+                            <constraint firstItem="TLb-Qe-HjN" firstAttribute="trailing" secondItem="BQN-NE-mNY" secondAttribute="trailing" id="5b5-3F-nxg"/>
+                            <constraint firstItem="8MN-dN-xyQ" firstAttribute="top" secondItem="TLb-Qe-HjN" secondAttribute="bottom" constant="75" id="6PZ-a1-3U6"/>
+                            <constraint firstItem="iC2-Aq-uqJ" firstAttribute="leading" secondItem="6il-Sv-ntv" secondAttribute="trailing" constant="9" id="GMF-Uy-Nri"/>
+                            <constraint firstItem="8MN-dN-xyQ" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="HYd-um-P6J"/>
+                            <constraint firstItem="DxQ-QC-WuG" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="KTT-Q3-Qwl"/>
+                            <constraint firstItem="93s-qr-pox" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="Z5h-C7-5pe"/>
+                            <constraint firstItem="TLb-Qe-HjN" firstAttribute="top" secondItem="CCf-e1-gIk" secondAttribute="bottom" constant="125" id="br1-B8-525"/>
+                            <constraint firstItem="TLb-Qe-HjN" firstAttribute="leading" secondItem="BQN-NE-mNY" secondAttribute="leading" id="bwb-Au-EzD"/>
+                            <constraint firstItem="JkU-QT-Uge" firstAttribute="leading" secondItem="iC2-Aq-uqJ" secondAttribute="trailing" constant="9" id="eV6-qC-ZQP"/>
+                            <constraint firstItem="B1H-Jo-ZVp" firstAttribute="leading" secondItem="93s-qr-pox" secondAttribute="trailing" constant="9" id="gdo-Zb-q5J"/>
+                            <constraint firstItem="CCf-e1-gIk" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="hfg-cF-N8p"/>
+                            <constraint firstItem="B1H-Jo-ZVp" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="ifZ-8Q-OJZ"/>
+                            <constraint firstItem="6il-Sv-ntv" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="ig9-VA-uaU"/>
+                            <constraint firstItem="93s-qr-pox" firstAttribute="leading" secondItem="DxQ-QC-WuG" secondAttribute="trailing" constant="9" id="mkW-Yw-LOs"/>
+                            <constraint firstItem="iC2-Aq-uqJ" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="mkf-z9-Z34"/>
+                            <constraint firstItem="CCf-e1-gIk" firstAttribute="top" secondItem="BQN-NE-mNY" secondAttribute="top" constant="50" id="qgo-FL-9s0"/>
+                            <constraint firstItem="TLb-Qe-HjN" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="rzC-rf-paI"/>
+                            <constraint firstItem="CCf-e1-gIk" firstAttribute="leading" secondItem="JkU-QT-Uge" secondAttribute="trailing" constant="9" id="ypZ-Vi-wQ4"/>
+                            <constraint firstItem="DxQ-QC-WuG" firstAttribute="leading" secondItem="CCf-e1-gIk" secondAttribute="trailing" constant="9" id="zXr-Mm-fzp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BQN-NE-mNY"/>
                     </view>
+                    <connections>
+                        <outlet property="createButton" destination="8MN-dN-xyQ" id="TiV-iG-kXL"/>
+                        <outlet property="datePicker" destination="TLb-Qe-HjN" id="89K-2f-MLN"/>
+                        <outlet property="fridayButton" destination="93s-qr-pox" id="aYT-KX-4yD"/>
+                        <outlet property="mondayButton" destination="iC2-Aq-uqJ" id="HbM-wt-5td"/>
+                        <outlet property="saturdayButton" destination="B1H-Jo-ZVp" id="pJf-gv-Irj"/>
+                        <outlet property="sundayButton" destination="6il-Sv-ntv" id="rRd-DD-b5d"/>
+                        <outlet property="thursdayButton" destination="DxQ-QC-WuG" id="wpE-YF-w3X"/>
+                        <outlet property="tuesdayButton" destination="JkU-QT-Uge" id="YhR-Mo-mZn"/>
+                        <outlet property="wednesdayButton" destination="CCf-e1-gIk" id="zS1-Jz-YfQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gp1-Bg-Zsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="134"/>
+            <point key="canvasLocation" x="2008.8" y="133.5832083958021"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="eCO-Kz-ac1">

@@ -19,6 +19,7 @@
 		BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */; };
 		BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C9203D180E0000F2D1 /* MapManager.swift */; };
 		BFD343CC203D23400000F2D1 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343CB203D23400000F2D1 /* CreateReminderViewController.swift */; };
+		BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343CD203E17FF0000F2D1 /* DayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
 		BFD343C9203D180E0000F2D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		BFD343CB203D23400000F2D1 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
+		BFD343CD203E17FF0000F2D1 /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				BFD343B1203B88EF0000F2D1 /* Reminder.swift */,
 				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
+				BFD343CD203E17FF0000F2D1 /* DayButton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */,
+				BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */,
 				BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */,
 				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
 				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
