@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD34398203B85C60000F2D1 /* AppDelegate.swift */; };
-		BFD3439B203B85C70000F2D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3439A203B85C70000F2D1 /* ViewController.swift */; };
 		BFD3439E203B85C70000F2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439C203B85C70000F2D1 /* Main.storyboard */; };
 		BFD343A0203B85C70000F2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439F203B85C70000F2D1 /* Assets.xcassets */; };
 		BFD343A3203B85C70000F2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD343A1203B85C70000F2D1 /* LaunchScreen.storyboard */; };
 		BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B1203B88EF0000F2D1 /* Reminder.swift */; };
+		BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */; };
+		BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B5203B90790000F2D1 /* MapViewController.swift */; };
+		BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B7203B90840000F2D1 /* SettingViewController.swift */; };
+		BFD343BB203BBC150000F2D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD343BA203BBC150000F2D1 /* MapKit.framework */; };
+		BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */; };
+		BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C9203D180E0000F2D1 /* MapManager.swift */; };
+		BFD343CC203D23400000F2D1 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343CB203D23400000F2D1 /* CreateReminderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFD34395203B85C60000F2D1 /* parking_reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parking_reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD34398203B85C60000F2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFD3439A203B85C70000F2D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFD3439D203B85C70000F2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFD3439F203B85C70000F2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD343A2203B85C70000F2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD343A4203B85C70000F2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD343B1203B88EF0000F2D1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BFD343B5203B90790000F2D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BFD343B7203B90840000F2D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		BFD343BA203BBC150000F2D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
+		BFD343C9203D180E0000F2D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		BFD343CB203D23400000F2D1 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD343BB203BBC150000F2D1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,7 @@
 			children = (
 				BFD34397203B85C60000F2D1 /* parking_reminder */,
 				BFD34396203B85C60000F2D1 /* Products */,
+				BFD343B9203BBC150000F2D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +70,10 @@
 		BFD34397203B85C60000F2D1 /* parking_reminder */ = {
 			isa = PBXGroup;
 			children = (
+				BFD343BD203BDE160000F2D1 /* Managers */,
+				BFD343BC203BDE030000F2D1 /* ViewControllers */,
 				BFD343AA203B88890000F2D1 /* Models */,
 				BFD34398203B85C60000F2D1 /* AppDelegate.swift */,
-				BFD3439A203B85C70000F2D1 /* ViewController.swift */,
 				BFD3439C203B85C70000F2D1 /* Main.storyboard */,
 				BFD3439F203B85C70000F2D1 /* Assets.xcassets */,
 				BFD343A1203B85C70000F2D1 /* LaunchScreen.storyboard */,
@@ -71,8 +86,36 @@
 			isa = PBXGroup;
 			children = (
 				BFD343B1203B88EF0000F2D1 /* Reminder.swift */,
+				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BFD343B9203BBC150000F2D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFD343BA203BBC150000F2D1 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFD343BC203BDE030000F2D1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */,
+				BFD343B5203B90790000F2D1 /* MapViewController.swift */,
+				BFD343B7203B90840000F2D1 /* SettingViewController.swift */,
+				BFD343CB203D23400000F2D1 /* CreateReminderViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BFD343BD203BDE160000F2D1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BFD343C9203D180E0000F2D1 /* MapManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +151,11 @@
 					BFD34394203B85C60000F2D1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -147,9 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */,
 				BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */,
-				BFD3439B203B85C70000F2D1 /* ViewController.swift in Sources */,
+				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
+				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
+				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
+				BFD343CC203D23400000F2D1 /* CreateReminderViewController.swift in Sources */,
+				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

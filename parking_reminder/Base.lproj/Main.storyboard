@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4aP-zM-ocV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item-->
+        <scene sceneID="MRR-Np-um8">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="GDH-l0-Wei" customClass="SettingView" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="3Vb-Rb-OMk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azs-TT-SOJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="haa-TA-11T" kind="relationship" relationship="rootViewController" id="T6A-C1-HwS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbo-Sw-3se" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="135"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="iL8-1I-Ede">
+            <objects>
+                <viewController id="haa-TA-11T" customClass="SettingViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="puE-gu-MEi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-xT-rfu">
+                                <rect key="frame" x="0.0" y="293" width="375" height="80"/>
+                                <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="l9o-cq-rKC"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6j4-A0-WMa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="229"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-80-bAn">
+                                <rect key="frame" x="0.0" y="373" width="375" height="245"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z8Z-80-bAn" firstAttribute="top" secondItem="bOe-xT-rfu" secondAttribute="bottom" id="39w-6d-SkA"/>
+                            <constraint firstItem="bOe-xT-rfu" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="6t0-f3-NW5"/>
+                            <constraint firstItem="6j4-A0-WMa" firstAttribute="top" secondItem="3pr-d7-sj5" secondAttribute="top" id="RxC-Ha-8qt"/>
+                            <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="6j4-A0-WMa" secondAttribute="trailing" id="WAX-DK-gXL"/>
+                            <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="bOe-xT-rfu" secondAttribute="trailing" id="a6v-pw-w8P"/>
+                            <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="Z8Z-80-bAn" secondAttribute="trailing" id="c2m-3O-Iay"/>
+                            <constraint firstItem="Z8Z-80-bAn" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="nhq-rg-RLA"/>
+                            <constraint firstItem="bOe-xT-rfu" firstAttribute="centerY" secondItem="puE-gu-MEi" secondAttribute="centerY" id="oif-2V-CuA"/>
+                            <constraint firstItem="6j4-A0-WMa" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="sdk-Zt-Xbl"/>
+                            <constraint firstItem="bOe-xT-rfu" firstAttribute="top" secondItem="6j4-A0-WMa" secondAttribute="bottom" id="wkC-hH-QZL"/>
+                            <constraint firstItem="3pr-d7-sj5" firstAttribute="bottom" secondItem="Z8Z-80-bAn" secondAttribute="bottom" id="xZV-U7-3b9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3pr-d7-sj5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BW4-38-bAx"/>
+                    <connections>
+                        <outlet property="bottonTableView" destination="Z8Z-80-bAn" id="YcX-uw-3Qd"/>
+                        <outlet property="topTableView" destination="6j4-A0-WMa" id="uxz-Cv-lSf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-eG-AML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280.8" y="133.5832083958021"/>
+        </scene>
+        <!--Create Reminder View Controller-->
+        <scene sceneID="7Sc-0Z-ONe">
+            <objects>
+                <viewController id="c6r-Oi-xbL" customClass="CreateReminderViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XS9-TV-0yO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BQN-NE-mNY"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gp1-Bg-Zsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2009" y="134"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="eCO-Kz-ac1">
+            <objects>
+                <viewController id="uXZ-ud-Tbe" customClass="MapViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vpx-94-X61">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meT-6M-FQV">
+                                <rect key="frame" x="172" y="588" width="31" height="30"/>
+                                <state key="normal" title="Park"/>
+                                <connections>
+                                    <action selector="parkButtonPressed:" destination="uXZ-ud-Tbe" eventType="touchUpInside" id="wNg-H8-VTa"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HSu-vq-YeD" firstAttribute="trailing" secondItem="Rsg-vQ-bhY" secondAttribute="trailing" id="1jR-49-0ew"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="45U-CE-Vww"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="HSu-vq-YeD" secondAttribute="top" id="Bhc-GF-Wkf"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="iXy-Sx-xka"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="top" secondItem="Rsg-vQ-bhY" secondAttribute="bottom" id="jr3-N0-ZQu"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="leading" secondItem="HSu-vq-YeD" secondAttribute="leading" id="lTx-Ee-yDA"/>
+                            <constraint firstItem="meT-6M-FQV" firstAttribute="bottom" secondItem="HSu-vq-YeD" secondAttribute="bottom" id="ptI-DO-iPR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HSu-vq-YeD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Iy1-hi-Sk4"/>
+                    <connections>
+                        <outlet property="mapView" destination="Rsg-vQ-bhY" id="t7n-mJ-BGF"/>
+                        <outlet property="parkButton" destination="meT-6M-FQV" id="I9d-5Z-sLS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8m2-c6-J4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="-536.58170914542734"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="egl-SD-S7s">
+            <objects>
+                <tabBarController id="4aP-zM-ocV" customClass="TabBarViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Le-jc-8LF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uXZ-ud-Tbe" kind="relationship" relationship="viewControllers" id="iaq-lx-z73"/>
+                        <segue destination="GDH-l0-Wei" kind="relationship" relationship="viewControllers" id="AlQ-Kk-lJL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWd-QA-qrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="-233"/>
         </scene>
     </scenes>
 </document>
