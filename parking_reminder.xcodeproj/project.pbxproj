@@ -17,6 +17,7 @@
 		BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B7203B90840000F2D1 /* SettingViewController.swift */; };
 		BFD343BB203BBC150000F2D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD343BA203BBC150000F2D1 /* MapKit.framework */; };
 		BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */; };
+		BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C9203D180E0000F2D1 /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BFD343B7203B90840000F2D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BFD343BA203BBC150000F2D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
+		BFD343C9203D180E0000F2D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		BFD343BD203BDE160000F2D1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BFD343C9203D180E0000F2D1 /* MapManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */,
 				BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */,
+				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
 				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
