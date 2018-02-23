@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ReminderCreationDelegate {
+    func didCreateReminder(reminder: Reminder)
+}
+
 class CreateReminderViewController: UIViewController {
     @IBOutlet weak var sundayButton: DayButton!
     @IBOutlet weak var mondayButton: DayButton!
@@ -18,11 +22,11 @@ class CreateReminderViewController: UIViewController {
     @IBOutlet weak var saturdayButton: DayButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var createButton: UIButton!
-    
+    var reminderCreateionDelegate: ReminderCreationDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor.yellow
         createButton.backgroundColor = UIColor.black
         createButton.layer.cornerRadius = 0.15 * createButton.bounds.size.width
@@ -129,7 +133,8 @@ class CreateReminderViewController: UIViewController {
         }
         let date = datePicker.date
         
-        let reminder = Reminder(time: date, days: selectedDays)
+        let reminder = Reminder(date: date, days: selectedDays)
+        reminderCreateionDelegate.didCreateReminder(reminder: reminder)
         self.navigationController?.popViewController(animated: true)
     }
     
