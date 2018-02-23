@@ -24,26 +24,24 @@ class SettingViewController: UIViewController {
         topReminders = [monday, saturday]
         bottomReminders = [wedensday, thursday]
         
-        self.view.backgroundColor = UIColor.blue
-        self.topTableView.tag = 0
-        self.bottonTableView.tag = 1
-        self.topTableView.dataSource = self
-        self.bottonTableView.dataSource = self
+        view.backgroundColor = UIColor.blue
+        topTableView.dataSource = self
+        bottonTableView.dataSource = self
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminderButtonPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminderButtonPressed))
     }
     
     @objc func addReminderButtonPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let createVC = storyboard.instantiateViewController(withIdentifier: "createReminderVC") as! CreateReminderViewController
         createVC.reminderCreateionDelegate = self
-        self.navigationController?.pushViewController(createVC, animated: true)
+        navigationController?.pushViewController(createVC, animated: true)
     }
 }
 
 extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView.tag == 0 {
+        if tableView == topTableView {
             return topReminders.count
         }
         else {
@@ -51,17 +49,14 @@ extension SettingViewController: UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (tableView.tag == 0) {
+        if tableView == topTableView {
             let reminder = topReminders[indexPath.row]
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
             cell.backgroundColor = UIColor.green
-//            let components = Calendar.current.dateComponents([.hour, .minute], from: reminder.time)
-//            let hour = components.hour!
-//            let minute = components.minute!
+
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
             let timeString = dateFormatter.string(from: reminder.date)
-            let days = reminder.returnDaysAsString()
             let dayStatus = reminder.returnDayStatus()
  
             cell.textLabel?.text = timeString
@@ -69,10 +64,16 @@ extension SettingViewController: UITableViewDataSource {
             return cell
         }
         else {
-            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            let reminder = bottomReminders[indexPath.row]
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            let timeString = dateFormatter.string(from: reminder.date)
+            let dayStatus = reminder.returnDayStatus()
             cell.backgroundColor = UIColor.blue
-            cell.textLabel?.text = "Text Label"
-            cell.detailTextLabel?.text = "Detail Text Label"
+            cell.textLabel?.text = timeString
+            cell.detailTextLabel?.text = dayStatus
             return cell
         }
     }
