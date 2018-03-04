@@ -12,7 +12,8 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBar.items?[0].title = "Map"
+        self.tabBar.items?[1].title = "Settings"
         // Do any additional setup after loading the view.
     }
 

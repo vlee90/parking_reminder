@@ -16,6 +16,7 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Reminders"
         let monday = Reminder(date: Date(), days: [DaysOfWeek.Monday], type: ReminderType.FindLocation)
         let saturday = Reminder(date: Date(), days: [DaysOfWeek.Saturday], type: ReminderType.SetLocation)
         let wedensday = Reminder(date: Date(), days: [DaysOfWeek.Wedensday], type: ReminderType.FindLocation)
@@ -33,9 +34,8 @@ class SettingViewController: UIViewController {
     
     @objc func addReminderButtonPressed() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let createVC = storyboard.instantiateViewController(withIdentifier: "createReminderVC") as! CreateReminderViewController
-        createVC.reminderCreateionDelegate = self
-        navigationController?.pushViewController(createVC, animated: true)
+        let createReminderPickTypeViewController = storyboard.instantiateViewController(withIdentifier: "CREATE_REMINDER_PICK_TYPE_VIEWCONTROLLER") as! CreateReminderPickTypeViewController
+        navigationController?.pushViewController(createReminderPickTypeViewController, animated: true)
     }
 }
 
@@ -93,6 +93,7 @@ extension SettingViewController: UITableViewDataSource {
        
     }
 }
+
 extension SettingViewController: ReminderCreationDelegate {
     func didCreateReminder(reminder: Reminder) {
         print("Reminder: Date: \(reminder.date) - Days: \(reminder.days)")
@@ -100,3 +101,4 @@ extension SettingViewController: ReminderCreationDelegate {
         reminderTableView.reloadData()
     }
 }
+
