@@ -21,7 +21,11 @@ class CreateReminderViewController: UIViewController {
     @IBOutlet weak var fridayButton: DayButton!
     @IBOutlet weak var saturdayButton: DayButton!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var setReminderTypeButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var setLocationLabel: UILabel!
+    @IBOutlet weak var findLocationLabel: UILabel!
+    
     var reminderCreateionDelegate: ReminderCreationDelegate!
     
     override func viewDidLoad() {
@@ -123,6 +127,17 @@ class CreateReminderViewController: UIViewController {
             saturdayButton.backgroundColor = UIColor.orange
         }
     }
+    
+    @IBAction func setReminderTypeButtonPressed(_ sender: Any) {
+        if setLocationLabel.isEnabled {
+            setLocationLabel.isEnabled = false
+            findLocationLabel.isEnabled = true
+        } else {
+            setLocationLabel.isEnabled = true
+            findLocationLabel.isEnabled = false
+        }
+    }
+    
     @IBAction func createButtonPressed(_ sender: Any) {
         let dayButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton,saturdayButton]
         var selectedDays = [DaysOfWeek]()
@@ -133,7 +148,14 @@ class CreateReminderViewController: UIViewController {
         }
         let date = datePicker.date
         
-        let reminder = Reminder(date: date, days: selectedDays)
+        var reminderType: ReminderType
+        if setLocationLabel.isEnabled {
+            reminderType = ReminderType.SetLocation
+        } else {
+            reminderType = ReminderType.FindLocation
+        }
+        
+        let reminder = Reminder(date: date, days: selectedDays, type: reminderType)
         reminderCreateionDelegate.didCreateReminder(reminder: reminder)
         self.navigationController?.popViewController(animated: true)
     }

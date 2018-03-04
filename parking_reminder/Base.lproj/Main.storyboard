@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,42 +36,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-xT-rfu">
-                                <rect key="frame" x="0.0" y="293" width="375" height="80"/>
-                                <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="l9o-cq-rKC"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6j4-A0-WMa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="229"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-80-bAn">
-                                <rect key="frame" x="0.0" y="373" width="375" height="245"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="REMINDER_TABLEVIEW_CELL" rowHeight="150" id="wwD-RE-gCs" customClass="ReminderTableViewCell" customModule="parking_reminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwD-RE-gCs" id="WqU-Pa-lNy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Monday, Tuesday, Wedensday, Thursday, Friday, Saturday" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-qY-SKa">
+                                                    <rect key="frame" x="160" y="59" width="205" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-lf-5jg">
+                                                    <rect key="frame" x="25" y="57" width="125" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="iwJ-Rf-uey"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kj0-lf-5jg" firstAttribute="centerY" secondItem="WqU-Pa-lNy" secondAttribute="centerY" id="Yak-fk-geu"/>
+                                                <constraint firstAttribute="trailing" secondItem="JZb-qY-SKa" secondAttribute="trailing" constant="10" id="bcK-CI-XKy"/>
+                                                <constraint firstItem="JZb-qY-SKa" firstAttribute="leading" secondItem="Kj0-lf-5jg" secondAttribute="trailing" constant="10" id="cbw-z6-LVe"/>
+                                                <constraint firstItem="Kj0-lf-5jg" firstAttribute="leading" secondItem="WqU-Pa-lNy" secondAttribute="leadingMargin" constant="10" id="lRL-dH-gv0"/>
+                                                <constraint firstItem="JZb-qY-SKa" firstAttribute="centerY" secondItem="WqU-Pa-lNy" secondAttribute="centerY" id="wl0-RX-9EI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="daysLabel" destination="JZb-qY-SKa" id="GPj-RR-3Em"/>
+                                            <outlet property="timeLabel" destination="Kj0-lf-5jg" id="zMX-eF-Myd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Z8Z-80-bAn" firstAttribute="top" secondItem="bOe-xT-rfu" secondAttribute="bottom" id="39w-6d-SkA"/>
-                            <constraint firstItem="bOe-xT-rfu" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="6t0-f3-NW5"/>
                             <constraint firstItem="6j4-A0-WMa" firstAttribute="top" secondItem="3pr-d7-sj5" secondAttribute="top" id="RxC-Ha-8qt"/>
                             <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="6j4-A0-WMa" secondAttribute="trailing" id="WAX-DK-gXL"/>
-                            <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="bOe-xT-rfu" secondAttribute="trailing" id="a6v-pw-w8P"/>
-                            <constraint firstItem="3pr-d7-sj5" firstAttribute="trailing" secondItem="Z8Z-80-bAn" secondAttribute="trailing" id="c2m-3O-Iay"/>
-                            <constraint firstItem="Z8Z-80-bAn" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="nhq-rg-RLA"/>
-                            <constraint firstItem="bOe-xT-rfu" firstAttribute="centerY" secondItem="puE-gu-MEi" secondAttribute="centerY" id="oif-2V-CuA"/>
+                            <constraint firstItem="3pr-d7-sj5" firstAttribute="bottom" secondItem="6j4-A0-WMa" secondAttribute="bottom" id="af3-eD-GzU"/>
                             <constraint firstItem="6j4-A0-WMa" firstAttribute="leading" secondItem="3pr-d7-sj5" secondAttribute="leading" id="sdk-Zt-Xbl"/>
-                            <constraint firstItem="bOe-xT-rfu" firstAttribute="top" secondItem="6j4-A0-WMa" secondAttribute="bottom" id="wkC-hH-QZL"/>
-                            <constraint firstItem="3pr-d7-sj5" firstAttribute="bottom" secondItem="Z8Z-80-bAn" secondAttribute="bottom" id="xZV-U7-3b9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3pr-d7-sj5"/>
                     </view>
                     <navigationItem key="navigationItem" id="BW4-38-bAx"/>
                     <connections>
-                        <outlet property="bottonTableView" destination="Z8Z-80-bAn" id="YcX-uw-3Qd"/>
-                        <outlet property="topTableView" destination="6j4-A0-WMa" id="uxz-Cv-lSf"/>
+                        <outlet property="reminderTableView" destination="6j4-A0-WMa" id="yED-7b-pcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-eG-AML" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,7 +189,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MN-dN-xyQ">
-                                <rect key="frame" x="165" y="530" width="46" height="40"/>
+                                <rect key="frame" x="165" y="560" width="46" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5D3-RU-YtY"/>
                                 </constraints>
@@ -178,15 +198,41 @@
                                     <action selector="createButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="TNr-kL-CnL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikJ-mY-kAv">
+                                <rect key="frame" x="123" y="500" width="130" height="30"/>
+                                <state key="normal" title="Set Reminder Type"/>
+                                <connections>
+                                    <action selector="setReminderTypeButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="ccG-yB-5sG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-kw-e6d">
+                                <rect key="frame" x="12" y="504" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIv-a1-nv3">
+                                <rect key="frame" x="268" y="504.5" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JkU-QT-Uge" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="2oT-Z8-yTf"/>
+                            <constraint firstItem="9kV-kw-e6d" firstAttribute="centerY" secondItem="ikJ-mY-kAv" secondAttribute="centerY" id="4T5-ie-YLm"/>
+                            <constraint firstItem="ikJ-mY-kAv" firstAttribute="top" secondItem="TLb-Qe-HjN" secondAttribute="bottom" constant="45" id="5Qt-3v-tGM"/>
                             <constraint firstItem="TLb-Qe-HjN" firstAttribute="trailing" secondItem="BQN-NE-mNY" secondAttribute="trailing" id="5b5-3F-nxg"/>
-                            <constraint firstItem="8MN-dN-xyQ" firstAttribute="top" secondItem="TLb-Qe-HjN" secondAttribute="bottom" constant="75" id="6PZ-a1-3U6"/>
+                            <constraint firstAttribute="trailing" secondItem="NIv-a1-nv3" secondAttribute="trailing" constant="4" id="6eI-ea-b5j"/>
+                            <constraint firstItem="9kV-kw-e6d" firstAttribute="leading" secondItem="XS9-TV-0yO" secondAttribute="leading" constant="12" id="EoX-wD-OQZ"/>
                             <constraint firstItem="iC2-Aq-uqJ" firstAttribute="leading" secondItem="6il-Sv-ntv" secondAttribute="trailing" constant="9" id="GMF-Uy-Nri"/>
                             <constraint firstItem="8MN-dN-xyQ" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="HYd-um-P6J"/>
                             <constraint firstItem="DxQ-QC-WuG" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="KTT-Q3-Qwl"/>
+                            <constraint firstItem="ikJ-mY-kAv" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="Neo-Uh-j11"/>
+                            <constraint firstItem="ikJ-mY-kAv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9kV-kw-e6d" secondAttribute="trailing" constant="8" symbolic="YES" id="PAH-g4-K9b"/>
+                            <constraint firstItem="NIv-a1-nv3" firstAttribute="centerY" secondItem="ikJ-mY-kAv" secondAttribute="centerY" id="Pno-Zq-jhv"/>
+                            <constraint firstItem="8MN-dN-xyQ" firstAttribute="top" secondItem="ikJ-mY-kAv" secondAttribute="bottom" constant="30" id="TvF-gc-43j"/>
                             <constraint firstItem="93s-qr-pox" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="Z5h-C7-5pe"/>
                             <constraint firstItem="TLb-Qe-HjN" firstAttribute="top" secondItem="CCf-e1-gIk" secondAttribute="bottom" constant="125" id="br1-B8-525"/>
                             <constraint firstItem="TLb-Qe-HjN" firstAttribute="leading" secondItem="BQN-NE-mNY" secondAttribute="leading" id="bwb-Au-EzD"/>
@@ -195,6 +241,7 @@
                             <constraint firstItem="CCf-e1-gIk" firstAttribute="centerX" secondItem="BQN-NE-mNY" secondAttribute="centerX" id="hfg-cF-N8p"/>
                             <constraint firstItem="B1H-Jo-ZVp" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="ifZ-8Q-OJZ"/>
                             <constraint firstItem="6il-Sv-ntv" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="ig9-VA-uaU"/>
+                            <constraint firstItem="NIv-a1-nv3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ikJ-mY-kAv" secondAttribute="trailing" constant="8" symbolic="YES" id="jik-pt-JYr"/>
                             <constraint firstItem="93s-qr-pox" firstAttribute="leading" secondItem="DxQ-QC-WuG" secondAttribute="trailing" constant="9" id="mkW-Yw-LOs"/>
                             <constraint firstItem="iC2-Aq-uqJ" firstAttribute="centerY" secondItem="CCf-e1-gIk" secondAttribute="centerY" id="mkf-z9-Z34"/>
                             <constraint firstItem="CCf-e1-gIk" firstAttribute="top" secondItem="BQN-NE-mNY" secondAttribute="top" constant="50" id="qgo-FL-9s0"/>
@@ -207,9 +254,12 @@
                     <connections>
                         <outlet property="createButton" destination="8MN-dN-xyQ" id="TiV-iG-kXL"/>
                         <outlet property="datePicker" destination="TLb-Qe-HjN" id="89K-2f-MLN"/>
+                        <outlet property="findLocationLabel" destination="NIv-a1-nv3" id="eA7-ox-RLG"/>
                         <outlet property="fridayButton" destination="93s-qr-pox" id="aYT-KX-4yD"/>
                         <outlet property="mondayButton" destination="iC2-Aq-uqJ" id="HbM-wt-5td"/>
                         <outlet property="saturdayButton" destination="B1H-Jo-ZVp" id="pJf-gv-Irj"/>
+                        <outlet property="setLocationLabel" destination="9kV-kw-e6d" id="eRW-xn-kw8"/>
+                        <outlet property="setReminderTypeButton" destination="ikJ-mY-kAv" id="lRv-03-OyA"/>
                         <outlet property="sundayButton" destination="6il-Sv-ntv" id="rRd-DD-b5d"/>
                         <outlet property="thursdayButton" destination="DxQ-QC-WuG" id="wpE-YF-w3X"/>
                         <outlet property="tuesdayButton" destination="JkU-QT-Uge" id="YhR-Mo-mZn"/>

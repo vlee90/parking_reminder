@@ -12,11 +12,13 @@ class Reminder {
     //  Properties
     var date: Date
     var days: Array<DaysOfWeek>
+    let type: ReminderType
     
     //  Init
-    init(date: Date, days: Array<DaysOfWeek>) {
+    init(date: Date, days: Array<DaysOfWeek>, type: ReminderType) {
         self.date = date
         self.days = days
+        self.type = type
     }
     
     func returnDayStatus() -> String {
@@ -87,4 +89,9 @@ enum DaysOfWeek {
     case Friday
     case Saturday
     case Sunday
+}
+
+enum ReminderType {
+    case SetLocation
+    case FindLocation
 }

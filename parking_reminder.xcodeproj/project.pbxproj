@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */; };
 		BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD34398203B85C60000F2D1 /* AppDelegate.swift */; };
 		BFD3439E203B85C70000F2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439C203B85C70000F2D1 /* Main.storyboard */; };
 		BFD343A0203B85C70000F2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439F203B85C70000F2D1 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		BFD34395203B85C60000F2D1 /* parking_reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parking_reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD34398203B85C60000F2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD3439D203B85C70000F2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				BFD343B1203B88EF0000F2D1 /* Reminder.swift */,
 				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
 				BFD343CD203E17FF0000F2D1 /* DayButton.swift */,
+				BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFD343CC203D23400000F2D1 /* CreateReminderViewController.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
+				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
