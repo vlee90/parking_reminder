@@ -19,7 +19,7 @@ class CreateReminderPickTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Type"
+        navigationItem.title = "Set Type"
         setLocationButton.backgroundColor = UIColor.lightGray
         setLocationButton.layer.cornerRadius = 20
         setLocationButton.layer.borderWidth = 3
