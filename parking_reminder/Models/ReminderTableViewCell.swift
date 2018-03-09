@@ -15,6 +15,14 @@ class ReminderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
+    }
+    
+    func setReminder(reminder: Reminder) {
+        timeLabel.text = reminder.returnSimpleTime()
+        daysLabel.text = reminder.returnDayStatus()
+        daysLabel.lineBreakMode = .byWordWrapping
+        daysLabel.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

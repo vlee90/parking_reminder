@@ -64,32 +64,12 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             let reminder = topReminders[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_TABLEVIEW_CELL") as! ReminderTableViewCell
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "h:mm a"
-            let timeString = dateFormatter.string(from: reminder.date)
-            let dayStatus = reminder.returnDayStatus()
-            
-            cell.timeLabel?.text = timeString
-            cell.daysLabel?.text = dayStatus
-            cell.daysLabel.lineBreakMode = .byWordWrapping
-            cell.daysLabel.numberOfLines = 0
-            cell.selectionStyle = .none
+            cell.setReminder(reminder: reminder)
             return cell
         } else {
             let reminder = bottomReminders[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_TABLEVIEW_CELL") as! ReminderTableViewCell
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "h:mm a"
-            let timeString = dateFormatter.string(from: reminder.date)
-            let dayStatus = reminder.returnDayStatus()
-            
-            cell.timeLabel?.text = timeString
-            cell.daysLabel?.text = dayStatus
-            cell.daysLabel.lineBreakMode = .byWordWrapping
-            cell.daysLabel.numberOfLines = 0
-            cell.selectionStyle = .none
+            cell.setReminder(reminder: reminder)
             return cell
         }
     }
@@ -105,8 +85,6 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 bottomReminders.remove(at: indexPath.row)
             }
-            print(topReminders.count)
-            print(bottomReminders.count)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

@@ -158,57 +158,36 @@
                                 <rect key="frame" x="10" y="106.5" width="355" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Monday"/>
-                                <connections>
-                                    <action selector="mondayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="UKO-Hg-uXQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkU-QT-Uge" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="183" width="355" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Tuesday"/>
-                                <connections>
-                                    <action selector="tuesdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="efR-3m-rfc"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-QC-WuG" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="336.5" width="355" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Thursday"/>
-                                <connections>
-                                    <action selector="thursdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="Dcu-DS-GnC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93s-qr-pox" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="413" width="355" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Friday"/>
-                                <connections>
-                                    <action selector="fridayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="DUl-IU-TYK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCf-e1-gIk" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="259.5" width="355" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Wedensday"/>
-                                <connections>
-                                    <action selector="wednesdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="66g-lP-yOC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-Jo-ZVp" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="489" width="355" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Saturday"/>
-                                <connections>
-                                    <action selector="saturdayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="UW3-KF-lIt"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6il-Sv-ntv" customClass="DayButton" customModule="parking_reminder" customModuleProvider="target">
                                 <rect key="frame" x="10" y="30" width="355" height="66.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Sunday"/>
-                                <connections>
-                                    <action selector="sundayButtonPressed:" destination="c6r-Oi-xbL" eventType="touchUpInside" id="8tg-Xk-Wsg"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

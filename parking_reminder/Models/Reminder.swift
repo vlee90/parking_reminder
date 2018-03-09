@@ -79,6 +79,12 @@ class Reminder {
         }
         return dayArray
     }
+    
+    func returnSimpleTime()-> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: date)
+    }
 }
 
 enum DaysOfWeek {
