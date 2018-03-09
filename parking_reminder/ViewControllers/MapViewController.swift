@@ -37,16 +37,29 @@ class MapViewController: UIViewController {
         let greenLake = CLLocation(latitude: 47.678596, longitude: -122.324003)
         let regionRadius: CLLocationDistance = 1000
         let region = MKCoordinateRegionMakeWithDistance(greenLake.coordinate, regionRadius, regionRadius)
-        self.mapManager = MapManager()
-        self.mapView.delegate = mapManager
-        self.mapView.setRegion(region, animated: true)
-        self.mapView.showsUserLocation = true
-        self.mapView.addAnnotations([churchParking, starbucksParking])
+    
+        let annotation1 = MKPointAnnotation()
+        let annotation2 = MKPointAnnotation()
+        
+        annotation1.coordinate = starbucksParking.location
+        annotation1.title = starbucksParking.name
+        annotation2.coordinate = churchParking.location
+        annotation2.title = churchParking.name
+        
+        mapManager = MapManager()
+        mapView.delegate = mapManager
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+        mapView.addAnnotations([annotation1, annotation2])
+
     }
     
     @IBAction func parkButtonPressed(_ sender: Any) {
         let parkingSpot = ParkingSpot(name: "Parking Sport", latitude: self.locationManager!.location!.coordinate.latitude, longitude: self.locationManager!.location!.coordinate.longitude)
-        self.mapView.addAnnotation(parkingSpot)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = parkingSpot.location
+        annotation.title = parkingSpot.name
+        self.mapView.addAnnotation(annotation)
         
     }
 }

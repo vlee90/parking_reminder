@@ -11,19 +11,10 @@ import MapKit
 
 class ParkingSpot: NSObject {
     let name: String
-    let location: CLLocation
+    let location: CLLocationCoordinate2D
     
     init(name: String, latitude: Double, longitude: Double) {
         self.name = name
-        self.location = CLLocation(latitude: latitude, longitude: longitude)
-    }
-}
-
-extension ParkingSpot: MKAnnotation {
-    var coordinate: CLLocationCoordinate2D {
-        get {return self.location.coordinate}
-    }
-    var title: String? {
-        get {return self.name}
+        self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }

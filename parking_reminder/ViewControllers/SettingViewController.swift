@@ -39,7 +39,7 @@ class SettingViewController: UIViewController {
     }
 }
 
-extension SettingViewController: UITableViewDataSource {
+extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -48,7 +48,7 @@ extension SettingViewController: UITableViewDataSource {
         if section == 0 {
             return "Set Location Reminders"
         } else {
-            return "Find Locaiton Reminders"
+            return "Find Location Reminders"
         }
     }
     
@@ -74,6 +74,7 @@ extension SettingViewController: UITableViewDataSource {
             cell.daysLabel?.text = dayStatus
             cell.daysLabel.lineBreakMode = .byWordWrapping
             cell.daysLabel.numberOfLines = 0
+            cell.selectionStyle = .none
             return cell
         } else {
             let reminder = bottomReminders[indexPath.row]
@@ -88,16 +89,36 @@ extension SettingViewController: UITableViewDataSource {
             cell.daysLabel?.text = dayStatus
             cell.daysLabel.lineBreakMode = .byWordWrapping
             cell.daysLabel.numberOfLines = 0
+            cell.selectionStyle = .none
             return cell
         }
-       
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if indexPath.section == 0 {
+                topReminders.remove(at: indexPath.row)
+            } else {
+                bottomReminders.remove(at: indexPath.row)
+            }
+            print(topReminders.count)
+            print(bottomReminders.count)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
 extension SettingViewController: ReminderCreationDelegate {
     func didCreateReminder(reminder: Reminder) {
-        print("Reminder: Date: \(reminder.date) - Days: \(reminder.days)")
-        topReminders.append(reminder)
+        if reminder.type == ReminderType.SetLocation {
+            topReminders.append(reminder)
+        } else {
+            bottomReminders.append(reminder)
+        }
         reminderTableView.reloadData()
     }
 }
