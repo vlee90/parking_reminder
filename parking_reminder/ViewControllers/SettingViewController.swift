@@ -25,9 +25,10 @@ class SettingViewController: UIViewController {
         topReminders = [monday, saturday]
         bottomReminders = [wedensday, thursday]
         
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.backgroundSupportColor()
         reminderTableView.dataSource = self
         reminderTableView.rowHeight = 100
+        reminderTableView.backgroundColor = UIColor.backgroundColor()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addReminderButtonPressed))
     }
@@ -65,11 +66,13 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
             let reminder = topReminders[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_TABLEVIEW_CELL") as! ReminderTableViewCell
             cell.setReminder(reminder: reminder)
+            cell.backgroundColor = UIColor.secondaryColor()
             return cell
         } else {
             let reminder = bottomReminders[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_TABLEVIEW_CELL") as! ReminderTableViewCell
             cell.setReminder(reminder: reminder)
+            cell.backgroundColor = UIColor.supportColor()
             return cell
         }
     }

@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Item-->
         <scene sceneID="MRR-Np-um8">
@@ -106,40 +111,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3I-he-YGc">
-                                <rect key="frame" x="10" y="30" width="355" height="220"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Remind me to when to set parking location." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjX-Bn-SV8">
+                                <rect key="frame" x="10" y="32" width="355" height="220"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3I-he-YGc" customClass="SetReminderTypeButton" customModule="parking_reminder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="260" width="355" height="220"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="30"/>
                                 <state key="normal" title="Set Location"/>
                                 <connections>
-                                    <action selector="setLocationButtonPressed:" destination="NlZ-d2-3go" eventType="touchUpInside" id="3vY-Gk-l8u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-Q3-Mpe">
-                                <rect key="frame" x="10" y="437" width="355" height="220"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Find Location"/>
-                                <connections>
-                                    <action selector="findLocationButtonPressed:" destination="NlZ-d2-3go" eventType="touchUpInside" id="Igb-eG-oGR"/>
+                                    <action selector="setLocationButtonPressed:" destination="NlZ-d2-3go" eventType="touchUpInside" id="R01-B6-a4C"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qSQ-0x-Evu" firstAttribute="trailing" secondItem="Y6b-Q3-Mpe" secondAttribute="trailing" constant="10" id="BAD-rP-TeN"/>
-                            <constraint firstItem="Y6b-Q3-Mpe" firstAttribute="height" secondItem="b3I-he-YGc" secondAttribute="height" id="HRx-b4-l76"/>
-                            <constraint firstItem="qSQ-0x-Evu" firstAttribute="bottom" secondItem="Y6b-Q3-Mpe" secondAttribute="bottom" constant="10" id="OU1-F9-dOa"/>
-                            <constraint firstItem="Y6b-Q3-Mpe" firstAttribute="width" secondItem="b3I-he-YGc" secondAttribute="width" id="REl-JA-XFH"/>
+                            <constraint firstItem="qSQ-0x-Evu" firstAttribute="trailing" secondItem="bjX-Bn-SV8" secondAttribute="trailing" constant="10" id="6bg-IE-SXd"/>
                             <constraint firstItem="b3I-he-YGc" firstAttribute="height" secondItem="lrO-qO-fCt" secondAttribute="height" multiplier="0.33" id="c6A-c5-gaP"/>
-                            <constraint firstItem="b3I-he-YGc" firstAttribute="top" secondItem="qSQ-0x-Evu" secondAttribute="top" constant="10" id="grb-Qt-YD2"/>
-                            <constraint firstItem="Y6b-Q3-Mpe" firstAttribute="leading" secondItem="qSQ-0x-Evu" secondAttribute="leading" constant="10" id="npm-Vb-mfh"/>
+                            <constraint firstItem="bjX-Bn-SV8" firstAttribute="top" secondItem="qSQ-0x-Evu" secondAttribute="top" constant="10" id="cJH-qa-e7l"/>
+                            <constraint firstItem="bjX-Bn-SV8" firstAttribute="height" secondItem="lrO-qO-fCt" secondAttribute="height" multiplier="0.33" id="dJQ-cm-Tb4"/>
+                            <constraint firstItem="b3I-he-YGc" firstAttribute="top" secondItem="bjX-Bn-SV8" secondAttribute="bottom" constant="10" id="flU-DS-JDK"/>
                             <constraint firstItem="b3I-he-YGc" firstAttribute="leading" secondItem="qSQ-0x-Evu" secondAttribute="leading" constant="10" id="tNR-Jr-5iT"/>
+                            <constraint firstItem="bjX-Bn-SV8" firstAttribute="leading" secondItem="qSQ-0x-Evu" secondAttribute="leading" constant="10" id="zX8-zc-aOj"/>
                             <constraint firstItem="qSQ-0x-Evu" firstAttribute="trailing" secondItem="b3I-he-YGc" secondAttribute="trailing" constant="10" id="zf6-Ed-2rF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qSQ-0x-Evu"/>
                     </view>
                     <connections>
-                        <outlet property="findLocationButton" destination="Y6b-Q3-Mpe" id="aZU-7b-VzQ"/>
-                        <outlet property="setLocationButton" destination="b3I-he-YGc" id="zLd-fp-dix"/>
+                        <outlet property="reminderLabel" destination="bjX-Bn-SV8" id="hiw-nw-1FK"/>
+                        <outlet property="reminderTypeButton" destination="b3I-he-YGc" id="XFz-ag-Xep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xL-Uk-bwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,35 +256,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lx7-dp-eij">
-                                <rect key="frame" x="10" y="40" width="355" height="220"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <date key="date" timeIntervalSinceReferenceDate="541849720.568923">
                                     <!--2018-03-04 09:48:40 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EP6-Bl-iVh">
-                                <rect key="frame" x="10" y="310" width="355" height="133.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Create Reminder"/>
-                                <connections>
-                                    <action selector="createReminderButtonPressed:" destination="LeS-Tz-owV" eventType="touchUpInside" id="JJ8-DS-d2j"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Lx7-dp-eij" firstAttribute="height" secondItem="Kz3-vi-Ob4" secondAttribute="height" multiplier="0.33" id="7WY-yx-7l8"/>
-                            <constraint firstItem="Lx7-dp-eij" firstAttribute="top" secondItem="zXZ-RR-IcP" secondAttribute="top" constant="20" id="E4V-6j-SXs"/>
-                            <constraint firstItem="Lx7-dp-eij" firstAttribute="leading" secondItem="zXZ-RR-IcP" secondAttribute="leading" constant="10" id="EGs-Z6-Ofk"/>
-                            <constraint firstItem="zXZ-RR-IcP" firstAttribute="trailing" secondItem="EP6-Bl-iVh" secondAttribute="trailing" constant="10" id="GVE-EC-a7D"/>
-                            <constraint firstAttribute="trailing" secondItem="Lx7-dp-eij" secondAttribute="trailing" constant="10" id="KQM-1e-ijz"/>
-                            <constraint firstItem="EP6-Bl-iVh" firstAttribute="height" secondItem="Kz3-vi-Ob4" secondAttribute="height" multiplier="0.2" id="erC-ds-JTK"/>
-                            <constraint firstItem="EP6-Bl-iVh" firstAttribute="top" secondItem="Lx7-dp-eij" secondAttribute="bottom" constant="50" id="kKs-IY-el0"/>
-                            <constraint firstItem="EP6-Bl-iVh" firstAttribute="leading" secondItem="zXZ-RR-IcP" secondAttribute="leading" constant="10" id="sEx-qo-Nnn"/>
+                            <constraint firstItem="zXZ-RR-IcP" firstAttribute="trailing" secondItem="Lx7-dp-eij" secondAttribute="trailing" id="4Gf-L4-Y1z"/>
+                            <constraint firstItem="Lx7-dp-eij" firstAttribute="top" secondItem="zXZ-RR-IcP" secondAttribute="top" id="5Y6-B0-zgL"/>
+                            <constraint firstItem="zXZ-RR-IcP" firstAttribute="bottom" secondItem="Lx7-dp-eij" secondAttribute="bottom" id="7sX-Lv-env"/>
+                            <constraint firstItem="Lx7-dp-eij" firstAttribute="leading" secondItem="zXZ-RR-IcP" secondAttribute="leading" id="nlp-Pb-6wg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zXZ-RR-IcP"/>
                     </view>
                     <connections>
-                        <outlet property="createReminderButton" destination="EP6-Bl-iVh" id="1jJ-6a-NxL"/>
                         <outlet property="datePicker" destination="Lx7-dp-eij" id="AQI-ri-kRJ"/>
                     </connections>
                 </viewController>
@@ -298,33 +287,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meT-6M-FQV">
-                                <rect key="frame" x="172" y="588" width="31" height="30"/>
-                                <state key="normal" title="Park"/>
-                                <connections>
-                                    <action selector="parkButtonPressed:" destination="uXZ-ud-Tbe" eventType="touchUpInside" id="wNg-H8-VTa"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HSu-vq-YeD" firstAttribute="trailing" secondItem="Rsg-vQ-bhY" secondAttribute="trailing" id="1jR-49-0ew"/>
-                            <constraint firstItem="meT-6M-FQV" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="45U-CE-Vww"/>
-                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="HSu-vq-YeD" secondAttribute="top" id="Bhc-GF-Wkf"/>
-                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="centerX" secondItem="Vpx-94-X61" secondAttribute="centerX" id="iXy-Sx-xka"/>
-                            <constraint firstItem="meT-6M-FQV" firstAttribute="top" secondItem="Rsg-vQ-bhY" secondAttribute="bottom" id="jr3-N0-ZQu"/>
-                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="leading" secondItem="HSu-vq-YeD" secondAttribute="leading" id="lTx-Ee-yDA"/>
-                            <constraint firstItem="meT-6M-FQV" firstAttribute="bottom" secondItem="HSu-vq-YeD" secondAttribute="bottom" id="ptI-DO-iPR"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="bottom" secondItem="HSu-vq-YeD" secondAttribute="bottom" id="asq-e3-kvv"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="Vpx-94-X61" secondAttribute="top" constant="20" id="efr-HP-meq"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="leading" secondItem="HSu-vq-YeD" secondAttribute="leading" id="hVU-bQ-i63"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="trailing" secondItem="HSu-vq-YeD" secondAttribute="trailing" id="n1u-s3-uof"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HSu-vq-YeD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Iy1-hi-Sk4"/>
                     <connections>
                         <outlet property="mapView" destination="Rsg-vQ-bhY" id="t7n-mJ-BGF"/>
-                        <outlet property="parkButton" destination="meT-6M-FQV" id="I9d-5Z-sLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8m2-c6-J4J" userLabel="First Responder" sceneMemberID="firstResponder"/>

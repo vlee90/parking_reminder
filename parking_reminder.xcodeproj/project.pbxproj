@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */; };
+		BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87D20536593001AD4F2 /* Constants.swift */; };
 		BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */; };
 		BFBFFE63204B8E04004D1242 /* CreateReminderPickTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE62204B8E04004D1242 /* CreateReminderPickTypeViewController.swift */; };
 		BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE64204BEC00004D1242 /* CreateReminderPickDaysViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTypeButton.swift; sourceTree = "<group>"; };
+		BFAAE87D20536593001AD4F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		BFBFFE62204B8E04004D1242 /* CreateReminderPickTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderPickTypeViewController.swift; sourceTree = "<group>"; };
 		BFBFFE64204BEC00004D1242 /* CreateReminderPickDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderPickDaysViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFAAE87C20535EA0001AD4F2 /* UISubclasses */ = {
+			isa = PBXGroup;
+			children = (
+				BFD343CD203E17FF0000F2D1 /* DayButton.swift */,
+				BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */,
+			);
+			path = UISubclasses;
+			sourceTree = "<group>";
+		};
 		BFBFFE66204BF81E004D1242 /* CreateReminderFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +105,7 @@
 				BFD343BC203BDE030000F2D1 /* ViewControllers */,
 				BFD343AA203B88890000F2D1 /* Models */,
 				BFD34398203B85C60000F2D1 /* AppDelegate.swift */,
+				BFAAE87D20536593001AD4F2 /* Constants.swift */,
 				BFD3439C203B85C70000F2D1 /* Main.storyboard */,
 				BFD3439F203B85C70000F2D1 /* Assets.xcassets */,
 				BFD343A1203B85C70000F2D1 /* LaunchScreen.storyboard */,
@@ -103,9 +117,9 @@
 		BFD343AA203B88890000F2D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BFAAE87C20535EA0001AD4F2 /* UISubclasses */,
 				BFD343B1203B88EF0000F2D1 /* Reminder.swift */,
 				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
-				BFD343CD203E17FF0000F2D1 /* DayButton.swift */,
 				BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */,
 			);
 			path = Models;
@@ -219,12 +233,14 @@
 				BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */,
 				BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */,
 				BFBFFE63204B8E04004D1242 /* CreateReminderPickTypeViewController.swift in Sources */,
+				BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */,
 				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
 				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFBFFE68204BF840004D1242 /* CreateReminderPickTimeViewController.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
+				BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */,
 				BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */,
 				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
 			);

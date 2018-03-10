@@ -12,26 +12,37 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var parkButton: UIButton!
     
-    var locationManager: CLLocationManager?
-    var mapManager: MapManager?
+    var parkButton: UIButton!
+    var locationManager: CLLocationManager!
+    var mapManager: MapManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor.backgroundColor()
         self.setupLocationManager()
         self.setupMapView()
     }
     
     func setupLocationManager() {
         self.locationManager = CLLocationManager()
-        self.locationManager!.delegate = self;
-        self.locationManager!.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager!.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
     }
     
     func setupMapView() {
+        parkButton = UIButton(frame: CGRect(x: mapView.frame.width * 0.6, y: mapView.frame.height * 0.85, width: mapView.frame.width * 0.2, height: mapView.frame.height * 0.1))
+        parkButton.backgroundColor = UIColor.supportColor()
+        parkButton.layer.cornerRadius = parkButton.frame.height / 2
+        parkButton.layer.borderWidth = 1
+        parkButton.setTitle("Park", for: .normal)
+        parkButton.setTitleColor(UIColor.black, for: .normal)
+        parkButton.setTitleColor(UIColor.backgroundColor(), for: .highlighted)
+        parkButton.setTitle("Parked", for: .highlighted)
+        parkButton.addTarget(self, action: #selector(MapViewController.parkButtonPressed), for: UIControlEvents.touchUpInside)
+        view.addSubview(parkButton)
+        
         let starbucksParking = ParkingSpot(name: "Starbucks", latitude: 47.679992, longitude: -122.325455)
         let churchParking = ParkingSpot(name: "Church", latitude: 47.674954, longitude: -122.320069)
         let greenLake = CLLocation(latitude: 47.678596, longitude: -122.324003)
@@ -54,28 +65,36 @@ class MapViewController: UIViewController {
 
     }
     
-    @IBAction func parkButtonPressed(_ sender: Any) {
-        let parkingSpot = ParkingSpot(name: "Parking Sport", latitude: self.locationManager!.location!.coordinate.latitude, longitude: self.locationManager!.location!.coordinate.longitude)
+    @objc func parkButtonPressed() {
+        //  If Location Services are not enabled, display alert to user.
+        guard let location = self.locationManager.location else {
+            let alert = UIAlertController(title: "Location is not enabled", message: "Please enable location services.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        //  Create Parking Spot and add this to map.
+        let parkingSpot = ParkingSpot(name: "Parking Sport", latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let annotation = MKPointAnnotation()
         annotation.coordinate = parkingSpot.location
         annotation.title = parkingSpot.name
         self.mapView.addAnnotation(annotation)
-        
     }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            print("Permission Approved")
             manager.startUpdatingLocation()
-            
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error: \(error)")
-        print("ErrorLocalizedDescription: \(error.localizedDescription)")
+        let alert = UIAlertController(title: "An error has occured", message: "Location Services is having difficulties.", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        alert.addAction(alertAction)
     }
 }

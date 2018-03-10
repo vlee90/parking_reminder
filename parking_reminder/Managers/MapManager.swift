@@ -41,19 +41,7 @@ extension MapManager: MKMapViewDelegate {
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let title = view.annotation!.title!
-        print("Select - Title: \(title!)")
-    }
-    
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        let title = view.annotation!.title!
-        print("Deselect - Title: \(title!)")
-    }
-    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let title = view.annotation!.title!
-        print("Callout - Title: \(title!)")
         mapView.removeAnnotation(view.annotation!)
     }
 }

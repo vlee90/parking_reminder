@@ -14,6 +14,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.items?[0].title = "Map"
         self.tabBar.items?[1].title = "Settings"
+//        self.navigationController?.navigationBar.isTranslucent = true
         // Do any additional setup after loading the view.
     }
 
