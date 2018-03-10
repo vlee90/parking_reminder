@@ -287,15 +287,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rsg-vQ-bhY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="bottom" secondItem="HSu-vq-YeD" secondAttribute="bottom" id="asq-e3-kvv"/>
-                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="Vpx-94-X61" secondAttribute="top" constant="20" id="efr-HP-meq"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="bottom" secondItem="Vpx-94-X61" secondAttribute="bottom" id="AeH-yG-Xxt"/>
                             <constraint firstItem="Rsg-vQ-bhY" firstAttribute="leading" secondItem="HSu-vq-YeD" secondAttribute="leading" id="hVU-bQ-i63"/>
+                            <constraint firstItem="Rsg-vQ-bhY" firstAttribute="top" secondItem="Vpx-94-X61" secondAttribute="top" id="m47-bG-RVH"/>
                             <constraint firstItem="Rsg-vQ-bhY" firstAttribute="trailing" secondItem="HSu-vq-YeD" secondAttribute="trailing" id="n1u-s3-uof"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HSu-vq-YeD"/>

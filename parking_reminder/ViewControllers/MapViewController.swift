@@ -32,9 +32,10 @@ class MapViewController: UIViewController {
     }
     
     func setupMapView() {
-        parkButton = UIButton(frame: CGRect(x: mapView.frame.width * 0.6, y: mapView.frame.height * 0.85, width: mapView.frame.width * 0.2, height: mapView.frame.height * 0.1))
-        parkButton.backgroundColor = UIColor.supportColor()
-        parkButton.layer.cornerRadius = parkButton.frame.height / 2
+        parkButton = UIButton(frame: CGRect(x:0, y: mapView.frame.height * 0.85, width: mapView.frame.width + 10, height: mapView.frame.height * 0.1))
+//        parkButton.layer.backgroundColor = UIColor(white: 0.0, alpha: 0.5).cgColor
+        parkButton.backgroundColor = UIColor(red:0.14, green:0.48, blue:0.63, alpha:0.5)
+        
         parkButton.layer.borderWidth = 1
         parkButton.setTitle("Park", for: .normal)
         parkButton.setTitleColor(UIColor.black, for: .normal)
