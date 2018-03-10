@@ -11,10 +11,7 @@ import UIKit
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tabBar.items?[0].title = "Map"
-        self.tabBar.items?[1].title = "Settings"
-        self.tabBar.isTranslucent = true
+        super.viewDidLoad()        
         // Do any additional setup after loading the view.
     }
 

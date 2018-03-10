@@ -43,5 +43,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use your location to determine where you parked.</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
