@@ -25,6 +25,7 @@ class SettingViewController: UIViewController {
         
         view.backgroundColor = UIColor.backgroundSupportColor()
         reminderTableView.dataSource = self
+        reminderTableView.delegate = self
         reminderTableView.rowHeight = 100
         reminderTableView.backgroundColor = UIColor.backgroundColor()
         
@@ -61,17 +62,25 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_HEADER_CELL") as! ReminderHeaderCell
         guard let sectionInfo = fetchedRC.sections?[section] else {
             return nil
         }
+        cell.contentView.backgroundColor = UIColor.red
         let reminderType = ReminderType(rawValue: sectionInfo.name)
         if reminderType == ReminderType.FindLocation {
-            return "Find Spot Alerts"
+            cell.headerTitle.text = "Find Location Reminders"
         } else {
-            return "Set Spot Alerts"
+            cell.headerTitle.text = "Set Location Reminders"
         }
+        return cell.contentView
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedRC.sections else{

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7520684BFA0006A040 /* NavigationViewController.swift */; };
+		BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F77206970780006A040 /* ReminderHeaderCell.swift */; };
 		BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */; };
 		BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */; };
 		BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		BF016F7520684BFA0006A040 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		BF016F77206970780006A040 /* ReminderHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderCell.swift; sourceTree = "<group>"; };
 		BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking_reminder.xcdatamodel; sourceTree = "<group>"; };
 		BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				BFAAE87C20535EA0001AD4F2 /* UISubclasses */,
 				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
 				BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */,
+				BF016F77206970780006A040 /* ReminderHeaderCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
 				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
+				BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFBFFE68204BF840004D1242 /* CreateReminderPickTimeViewController.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
