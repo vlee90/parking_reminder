@@ -1,20 +1,20 @@
 //
-//  TabBarViewController.swift
+//  NavigationViewController.swift
 //  parking_reminder
 //
-//  Created by Vincent Lee on 2/19/18.
+//  Created by Vincent Lee on 3/25/18.
 //  Copyright © 2018 Vincent Lee. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class TabBarViewController: UITabBarController {
+class NavigationViewController: UINavigationController {
     var objectContext: NSManagedObjectContext!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        objectContext = appDelegate.objectContext
+        let tabBarController = parent as! TabBarViewController
+        objectContext = tabBarController.objectContext
     }
 
     override func didReceiveMemoryWarning() {

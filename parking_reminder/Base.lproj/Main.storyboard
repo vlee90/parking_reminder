@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Setting View-->
+        <!--Navigation View Controller-->
         <scene sceneID="MRR-Np-um8">
             <objects>
-                <navigationController id="GDH-l0-Wei" customClass="SettingView" sceneMemberID="viewController">
+                <navigationController id="GDH-l0-Wei" customClass="NavigationViewController" customModule="parking_reminder" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="3Vb-Rb-OMk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azs-TT-SOJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

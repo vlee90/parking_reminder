@@ -20,8 +20,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColor()
-        self.setupLocationManager()
-        self.setupMapView()
+        setupLocationManager()
+        setupMapView()
+        let tvc = self.tabBarController as! TabBarViewController
     }
     
     func setupLocationManager() {

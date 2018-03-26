@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "parking_reminder")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            print(storeDescription)
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+    var objectContext: NSManagedObjectContext {return persistentContainer.viewContext}
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UILabel.appearance().defaultFont = UIFont.systemFont(ofSize: 25)
         UIButton.appearance().defaultFont = UIFont.systemFont(ofSize: 25)
+        
         return true
     }
 

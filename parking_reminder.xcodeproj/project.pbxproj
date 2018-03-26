@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7520684BFA0006A040 /* NavigationViewController.swift */; };
+		BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */; };
+		BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */; };
+		BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */; };
 		BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */; };
 		BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87D20536593001AD4F2 /* Constants.swift */; };
 		BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */; };
@@ -17,7 +21,6 @@
 		BFD3439E203B85C70000F2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439C203B85C70000F2D1 /* Main.storyboard */; };
 		BFD343A0203B85C70000F2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3439F203B85C70000F2D1 /* Assets.xcassets */; };
 		BFD343A3203B85C70000F2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD343A1203B85C70000F2D1 /* LaunchScreen.storyboard */; };
-		BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B1203B88EF0000F2D1 /* Reminder.swift */; };
 		BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */; };
 		BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B5203B90790000F2D1 /* MapViewController.swift */; };
 		BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B7203B90840000F2D1 /* SettingViewController.swift */; };
@@ -28,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF016F7520684BFA0006A040 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking_reminder.xcdatamodel; sourceTree = "<group>"; };
+		BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTypeButton.swift; sourceTree = "<group>"; };
 		BFAAE87D20536593001AD4F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
@@ -40,7 +47,6 @@
 		BFD3439F203B85C70000F2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFD343A2203B85C70000F2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD343A4203B85C70000F2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFD343B1203B88EF0000F2D1 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BFD343B5203B90790000F2D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BFD343B7203B90840000F2D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				BFD343AA203B88890000F2D1 /* Models */,
 				BFD34398203B85C60000F2D1 /* AppDelegate.swift */,
 				BFAAE87D20536593001AD4F2 /* Constants.swift */,
+				BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */,
 				BFD3439C203B85C70000F2D1 /* Main.storyboard */,
 				BFD3439F203B85C70000F2D1 /* Assets.xcassets */,
 				BFD343A1203B85C70000F2D1 /* LaunchScreen.storyboard */,
@@ -117,8 +124,9 @@
 		BFD343AA203B88890000F2D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */,
+				BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */,
 				BFAAE87C20535EA0001AD4F2 /* UISubclasses */,
-				BFD343B1203B88EF0000F2D1 /* Reminder.swift */,
 				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
 				BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */,
 			);
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD343B3203B905A0000F2D1 /* TabBarViewController.swift */,
+				BF016F7520684BFA0006A040 /* NavigationViewController.swift */,
 				BFD343B5203B90790000F2D1 /* MapViewController.swift */,
 				BFD343B7203B90840000F2D1 /* SettingViewController.swift */,
 				BFBFFE66204BF81E004D1242 /* CreateReminderFlow */,
@@ -230,16 +239,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */,
+				BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */,
 				BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */,
-				BFD343B2203B88EF0000F2D1 /* Reminder.swift in Sources */,
+				BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */,
 				BFBFFE63204B8E04004D1242 /* CreateReminderPickTypeViewController.swift in Sources */,
 				BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */,
+				BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */,
 				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
 				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFBFFE68204BF840004D1242 /* CreateReminderPickTimeViewController.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
+				BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */,
 				BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */,
 				BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */,
 				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
@@ -427,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */,
+			);
+			currentVersion = BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */;
+			path = parking_reminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BFD3438D203B85C60000F2D1 /* Project object */;
 }

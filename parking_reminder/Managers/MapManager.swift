@@ -37,7 +37,7 @@ extension MapManager: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-
+        
         return annotationView
     }
     
