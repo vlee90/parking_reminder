@@ -9,20 +9,39 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var parkButton: UIButton!
     var locationManager: CLLocationManager!
-    var mapManager: MapManager!
+    var context: NSManagedObjectContext!
+    var fetchRC: NSFetchedResultsController<ParkingSpot>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColor()
+        let tvc = self.tabBarController as! TabBarViewController
+        context = tvc.objectContext
+        let request = ParkingSpot.fetchRequest() as NSFetchRequest<ParkingSpot>
+        let sortType = NSSortDescriptor(key: #keyPath(ParkingSpot.name), ascending: true)
+        request.sortDescriptors = [sortType]
+        do {
+            fetchRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            try fetchRC.performFetch()
+            fetchRC.delegate = self
+            let parkingSpots = fetchRC.fetchedObjects as! [ParkingSpot]
+            for spot in parkingSpots {
+                mapView.addAnnotation(spot)
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+
         setupLocationManager()
         setupMapView()
-        let tvc = self.tabBarController as! TabBarViewController
+
     }
     
     func setupLocationManager() {
@@ -42,26 +61,13 @@ class MapViewController: UIViewController {
         parkButton.addTarget(self, action: #selector(MapViewController.parkButtonPressed), for: UIControlEvents.touchUpInside)
         view.addSubview(parkButton)
         
-        let starbucksParking = ParkingSpot(name: "Starbucks", latitude: 47.679992, longitude: -122.325455)
-        let churchParking = ParkingSpot(name: "Church", latitude: 47.674954, longitude: -122.320069)
         let greenLake = CLLocation(latitude: 47.678596, longitude: -122.324003)
         let regionRadius: CLLocationDistance = 1000
         let region = MKCoordinateRegionMakeWithDistance(greenLake.coordinate, regionRadius, regionRadius)
     
-        let annotation1 = MKPointAnnotation()
-        let annotation2 = MKPointAnnotation()
-        
-        annotation1.coordinate = starbucksParking.location
-        annotation1.title = starbucksParking.name
-        annotation2.coordinate = churchParking.location
-        annotation2.title = churchParking.name
-        
-        mapManager = MapManager()
-        mapView.delegate = mapManager
+        mapView.delegate = self
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
-        mapView.addAnnotations([annotation1, annotation2])
-
     }
     
     @objc func parkButtonPressed() {
@@ -75,11 +81,17 @@ class MapViewController: UIViewController {
         }
         
         //  Create Parking Spot and add this to map.
-        let parkingSpot = ParkingSpot(name: "Parking Sport", latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let parkingSpot = ParkingSpot(name: "Parking Sport", latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, entity: ParkingSpot.entity(), context: context)
         let annotation = MKPointAnnotation()
-        annotation.coordinate = parkingSpot.location
+        annotation.coordinate = parkingSpot.coordinate
         annotation.title = parkingSpot.name
-        self.mapView.addAnnotation(annotation)
+        
+        do {
+            try context?.save()
+        } catch {
+            let err = error as NSError
+            fatalError("Unresolved error \(err), \(err.userInfo)")
+        }
     }
 }
 
@@ -97,3 +109,91 @@ extension MapViewController: CLLocationManagerDelegate {
         alert.addAction(alertAction)
     }
 }
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // If Annotation is User Location, don't modify this annotation.
+        if annotation is MKUserLocation {
+            return nil
+        }
+
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin") as? MKPinAnnotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "none")
+            annotationView?.animatesDrop = true
+            annotationView?.canShowCallout = true
+            annotationView?.isDraggable = true
+            annotationView?.pinTintColor = .purple
+            
+            let deleteButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            deleteButton.setTitle("-", for: .normal)
+            deleteButton.backgroundColor = UIColor.red
+            deleteButton.layer.cornerRadius = 5
+            deleteButton.layer.cornerRadius = 1
+            deleteButton.layer.borderColor = UIColor.black.cgColor
+            annotationView?.rightCalloutAccessoryView = deleteButton
+            
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        if let userAnnotationView = mapView.view(for: mapView.userLocation) {
+            userAnnotationView.isEnabled = false
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let parkingSpot = view.annotation as! ParkingSpot
+        context.delete(parkingSpot)
+        do {
+            try context?.save()
+        } catch {
+            let err = error as NSError
+            fatalError("Unresolved error \(err), \(err.userInfo)")
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        if newState == .ending {
+            if let parkingSpot = view.annotation as? ParkingSpot {
+                let object = context.object(with: parkingSpot.objectID) as! ParkingSpot
+                object.latitude = parkingSpot.latitude
+                object.longitude = parkingSpot.longitude
+                object.coordinate = parkingSpot.coordinate
+                do {
+                    try context?.save()
+                } catch {
+                    let err = error as NSError
+                    fatalError("Unresolved error \(err), \(err.userInfo)")
+                }
+            }
+        }
+    }
+}
+
+extension MapViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        guard let parkingSpot = anObject as? ParkingSpot else {
+            preconditionFailure("All changes observed in the map view controller should be for ParkingSpot instances")
+        }
+        switch type {
+        case .insert:
+            mapView.addAnnotation(parkingSpot)
+        case .delete:
+            mapView.removeAnnotation(parkingSpot)
+        case .update:
+            mapView.removeAnnotation(parkingSpot)
+            mapView.addAnnotation(parkingSpot)
+        default:
+            break
+        }
+    }
+}
+
+
+
+

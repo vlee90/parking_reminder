@@ -94,6 +94,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "REMINDER_TABLEVIEW_CELL") as! ReminderTableViewCell
         let reminder = fetchedRC.object(at: indexPath)
         cell.setReminder(reminder: reminder)
+        
         let reminderType = ReminderType(rawValue: reminder.type)!
         if reminderType == .FindLocation {
             cell.backgroundColor = UIColor.secondaryColor()
@@ -109,7 +110,6 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("IndexPath: \(indexPath)")
             let reminder = fetchedRC.object(at: indexPath)
             context.delete(reminder)
             do {
@@ -119,21 +119,6 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
                 fatalError("Unresolved error \(err), \(err.userInfo)")
             }
         }
-    }
-}
-
-extension SettingViewController: ReminderCreationDelegate {
-    func didCreateReminder(reminder: Reminder) {
-//        let request = Reminder.fetchRequest() as NSFetchRequest<Reminder>
-//        let sortType = NSSortDescriptor(key: #keyPath(Reminder.type), ascending: true)
-//        request.sortDescriptors = [sortType]
-//        do {
-//            fetchedRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context!, sectionNameKeyPath: #keyPath(Reminder.type), cacheName: nil)
-//            try fetchedRC.performFetch()
-//            fetchedRC.delegate = self
-//        } catch let error as NSError {
-//            print("Could not fetch. \(error), \(error.userInfo)")
-//        }
     }
 }
 

@@ -9,15 +9,10 @@
 import UIKit
 import CoreData
 
-protocol ReminderCreationDelegate {
-    func didCreateReminder(reminder: Reminder)
-}
-
 class CreateReminderPickTimeViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     var reminderType: ReminderType!
     var pickedDays: [DaysOfWeek]!
-    var createReminderDelegate: ReminderCreationDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +27,13 @@ class CreateReminderPickTimeViewController: UIViewController {
     @objc func createReminder() {
         let parentVC = parent as! NavigationViewController
         let context = parentVC.objectContext
-        let reminder = Reminder(date: datePicker.date, days: pickedDays, type: reminderType, entity: Reminder.entity(), context: context!)
+        _ = Reminder(date: datePicker.date, days: pickedDays, type: reminderType, entity: Reminder.entity(), context: context!)
         do {
             try context?.save()
         } catch {
             let err = error as NSError
             fatalError("Unresolved error \(err), \(err.userInfo)")
         }
-        let rootViewController = navigationController?.viewControllers.first! as! SettingViewController
-        createReminderDelegate = rootViewController
-        createReminderDelegate.didCreateReminder(reminder: reminder)
         navigationController?.popToRootViewController(animated: true)
     }
 }

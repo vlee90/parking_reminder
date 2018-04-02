@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7520684BFA0006A040 /* NavigationViewController.swift */; };
 		BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F77206970780006A040 /* ReminderHeaderCell.swift */; };
+		BF016F7D20697AF20006A040 /* ParkingSpot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */; };
+		BF016F7E20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */; };
 		BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */; };
 		BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */; };
 		BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */; };
@@ -26,14 +28,14 @@
 		BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B5203B90790000F2D1 /* MapViewController.swift */; };
 		BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343B7203B90840000F2D1 /* SettingViewController.swift */; };
 		BFD343BB203BBC150000F2D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD343BA203BBC150000F2D1 /* MapKit.framework */; };
-		BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */; };
-		BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343C9203D180E0000F2D1 /* MapManager.swift */; };
 		BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD343CD203E17FF0000F2D1 /* DayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF016F7520684BFA0006A040 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		BF016F77206970780006A040 /* ReminderHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderCell.swift; sourceTree = "<group>"; };
+		BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingSpot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingSpot+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking_reminder.xcdatamodel; sourceTree = "<group>"; };
 		BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		BFD343B5203B90790000F2D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BFD343B7203B90840000F2D1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BFD343BA203BBC150000F2D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpot.swift; sourceTree = "<group>"; };
-		BFD343C9203D180E0000F2D1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		BFD343CD203E17FF0000F2D1 /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,6 @@
 		BFD34397203B85C60000F2D1 /* parking_reminder */ = {
 			isa = PBXGroup;
 			children = (
-				BFD343BD203BDE160000F2D1 /* Managers */,
 				BFD343BC203BDE030000F2D1 /* ViewControllers */,
 				BFD343AA203B88890000F2D1 /* Models */,
 				BFD34398203B85C60000F2D1 /* AppDelegate.swift */,
@@ -128,8 +127,9 @@
 			children = (
 				BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */,
 				BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */,
+				BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */,
+				BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */,
 				BFAAE87C20535EA0001AD4F2 /* UISubclasses */,
-				BFD343C0203BF0370000F2D1 /* ParkingSpot.swift */,
 				BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */,
 				BF016F77206970780006A040 /* ReminderHeaderCell.swift */,
 			);
@@ -154,14 +154,6 @@
 				BFBFFE66204BF81E004D1242 /* CreateReminderFlow */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		BFD343BD203BDE160000F2D1 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				BFD343C9203D180E0000F2D1 /* MapManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,16 +238,16 @@
 				BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */,
 				BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */,
 				BFBFFE63204B8E04004D1242 /* CreateReminderPickTypeViewController.swift in Sources */,
+				BF016F7D20697AF20006A040 /* ParkingSpot+CoreDataClass.swift in Sources */,
 				BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */,
 				BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */,
-				BFD343CA203D180E0000F2D1 /* MapManager.swift in Sources */,
-				BFD343C1203BF0370000F2D1 /* ParkingSpot.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFBFFE68204BF840004D1242 /* CreateReminderPickTimeViewController.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
 				BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */,
+				BF016F7E20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift in Sources */,
 				BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */,
 				BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */,
 				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
