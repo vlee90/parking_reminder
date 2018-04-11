@@ -31,9 +31,3 @@ class DayButton: UIButton {
     }
 }
 
-extension UIButton {
-    var defaultFont: UIFont? {
-        get {return self.titleLabel?.font}
-        set {self.titleLabel?.font = UIFont(name: "Courier", size: 20)}
-    }
-}

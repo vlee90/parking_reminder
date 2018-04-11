@@ -31,9 +31,10 @@ class MapViewController: UIViewController {
             fetchRC = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             try fetchRC.performFetch()
             fetchRC.delegate = self
-            let parkingSpots = fetchRC.fetchedObjects as! [ParkingSpot]
-            for spot in parkingSpots {
-                mapView.addAnnotation(spot)
+            if let parkingSpots = fetchRC.fetchedObjects {
+                for spot in parkingSpots {
+                    mapView.addAnnotation(spot)
+                }
             }
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -66,7 +67,7 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegionMakeWithDistance(greenLake.coordinate, regionRadius, regionRadius)
     
         mapView.delegate = self
-        mapView.setRegion(region, animated: true)
+//        mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
     }
     
@@ -111,6 +112,10 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // If Annotation is User Location, don't modify this annotation.
         if annotation is MKUserLocation {

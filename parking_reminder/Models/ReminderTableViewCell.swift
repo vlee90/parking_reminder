@@ -18,9 +18,9 @@ class ReminderTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func setReminder(reminder: Reminder) {
-        timeLabel.text = reminder.returnSimpleTime()
-        daysLabel.text = reminder.returnDayStatus()
+    func setReminders(reminders: ReminderSet) {
+        timeLabel.text = reminders.returnSimpleTime()
+        daysLabel.text = reminders.returnDayStatus()
         daysLabel.lineBreakMode = .byWordWrapping
         daysLabel.numberOfLines = 0
     }
@@ -30,5 +30,4 @@ class ReminderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

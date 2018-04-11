@@ -11,9 +11,15 @@
 		BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F77206970780006A040 /* ReminderHeaderCell.swift */; };
 		BF016F7D20697AF20006A040 /* ParkingSpot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */; };
 		BF016F7E20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */; };
+		BF03CDB5207E466E00F9B0B4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDB4207E466E00F9B0B4 /* StringExtension.swift */; };
+		BF03CDB8207E46D300F9B0B4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDB7207E46D300F9B0B4 /* UILabelExtension.swift */; };
+		BF03CDBA207E46EA00F9B0B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDB9207E46EA00F9B0B4 /* UIColorExtension.swift */; };
+		BF03CDBC207E471E00F9B0B4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDBB207E471E00F9B0B4 /* UIButtonExtension.swift */; };
+		BF03CDC0207E553800F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */; };
+		BF03CDC7207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */; };
+		BF03CDCC207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */; };
 		BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */; };
 		BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */; };
-		BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */; };
 		BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */; };
 		BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87D20536593001AD4F2 /* Constants.swift */; };
 		BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */; };
@@ -36,9 +42,15 @@
 		BF016F77206970780006A040 /* ReminderHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderHeaderCell.swift; sourceTree = "<group>"; };
 		BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingSpot+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingSpot+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BF03CDB4207E466E00F9B0B4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BF03CDB7207E46D300F9B0B4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		BF03CDB9207E46EA00F9B0B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		BF03CDBB207E471E00F9B0B4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Reminder+CoreDataProperties.swift"; path = "../../Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderSet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking_reminder.xcdatamodel; sourceTree = "<group>"; };
 		BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTypeButton.swift; sourceTree = "<group>"; };
 		BFAAE87D20536593001AD4F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBFFE5E204A5957004D1242 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF03CDB6207E467C00F9B0B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF03CDB4207E466E00F9B0B4 /* StringExtension.swift */,
+				BF03CDB7207E46D300F9B0B4 /* UILabelExtension.swift */,
+				BF03CDB9207E46EA00F9B0B4 /* UIColorExtension.swift */,
+				BF03CDBB207E471E00F9B0B4 /* UIButtonExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BFAAE87C20535EA0001AD4F2 /* UISubclasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +132,7 @@
 		BFD34397203B85C60000F2D1 /* parking_reminder */ = {
 			isa = PBXGroup;
 			children = (
+				BF03CDB6207E467C00F9B0B4 /* Extensions */,
 				BFD343BC203BDE030000F2D1 /* ViewControllers */,
 				BFD343AA203B88890000F2D1 /* Models */,
 				BFD34398203B85C60000F2D1 /* AppDelegate.swift */,
@@ -126,7 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */,
-				BF3099BC20659E2F00999419 /* Reminder+CoreDataProperties.swift */,
+				BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */,
+				BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */,
+				BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */,
 				BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */,
 				BF016F7C20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift */,
 				BFAAE87C20535EA0001AD4F2 /* UISubclasses */,
@@ -183,7 +209,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Vincent Lee";
 				TargetAttributes = {
 					BFD34394203B85C60000F2D1 = {
@@ -192,6 +218,9 @@
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -234,23 +263,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD343B8203B90840000F2D1 /* SettingViewController.swift in Sources */,
+				BF03CDBC207E471E00F9B0B4 /* UIButtonExtension.swift in Sources */,
 				BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */,
 				BFD343CE203E17FF0000F2D1 /* DayButton.swift in Sources */,
 				BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */,
 				BFBFFE63204B8E04004D1242 /* CreateReminderPickTypeViewController.swift in Sources */,
 				BF016F7D20697AF20006A040 /* ParkingSpot+CoreDataClass.swift in Sources */,
+				BF03CDC7207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift in Sources */,
 				BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */,
 				BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */,
+				BF03CDBA207E46EA00F9B0B4 /* UIColorExtension.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
 				BF016F78206970780006A040 /* ReminderHeaderCell.swift in Sources */,
+				BF03CDCC207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift in Sources */,
 				BFD34399203B85C60000F2D1 /* AppDelegate.swift in Sources */,
 				BFBFFE68204BF840004D1242 /* CreateReminderPickTimeViewController.swift in Sources */,
+				BF03CDB8207E46D300F9B0B4 /* UILabelExtension.swift in Sources */,
+				BF03CDB5207E466E00F9B0B4 /* StringExtension.swift in Sources */,
 				BFD343B6203B90790000F2D1 /* MapViewController.swift in Sources */,
-				BF3099BE20659E2F00999419 /* Reminder+CoreDataProperties.swift in Sources */,
 				BF016F7E20697AF20006A040 /* ParkingSpot+CoreDataProperties.swift in Sources */,
 				BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */,
 				BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */,
 				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
+				BF03CDC0207E553800F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +325,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -297,6 +333,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -347,6 +384,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -354,6 +392,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

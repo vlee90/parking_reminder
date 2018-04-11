@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UILabel.appearance().defaultFont = UIFont.systemFont(ofSize: 25)
         UIButton.appearance().defaultFont = UIFont.systemFont(ofSize: 25)
-        
+
         return true
     }
 

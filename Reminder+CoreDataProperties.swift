@@ -2,7 +2,7 @@
 //  Reminder+CoreDataProperties.swift
 //  parking_reminder
 //
-//  Created by Vincent Lee on 3/23/18.
+//  Created by Vincent Lee on 4/11/18.
 //  Copyright © 2018 Vincent Lee. All rights reserved.
 //
 //
@@ -17,9 +17,10 @@ extension Reminder {
         return NSFetchRequest<Reminder>(entityName: "Reminder")
     }
 
-    @NSManaged public var date: NSDate
-    @NSManaged public var days: [String]
+    @NSManaged public var day: Int16
     @NSManaged public var type: String
+    @NSManaged public var identifier: String
+    @NSManaged public var hour: Int16
+    @NSManaged public var minute: Int16
 
 }
-
