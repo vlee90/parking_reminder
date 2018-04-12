@@ -22,5 +22,6 @@ extension Reminder {
     @NSManaged public var identifier: String
     @NSManaged public var hour: Int16
     @NSManaged public var minute: Int16
+    @NSManaged public var reminderSet: ReminderSet?
 
 }

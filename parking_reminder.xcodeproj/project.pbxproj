@@ -15,9 +15,9 @@
 		BF03CDB8207E46D300F9B0B4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDB7207E46D300F9B0B4 /* UILabelExtension.swift */; };
 		BF03CDBA207E46EA00F9B0B4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDB9207E46EA00F9B0B4 /* UIColorExtension.swift */; };
 		BF03CDBC207E471E00F9B0B4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDBB207E471E00F9B0B4 /* UIButtonExtension.swift */; };
-		BF03CDC0207E553800F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */; };
 		BF03CDC7207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */; };
 		BF03CDCC207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */; };
+		BF03CDD4207E631400F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03CDD2207E631400F9B0B4 /* Reminder+CoreDataProperties.swift */; };
 		BF3099BA20659D6300999419 /* parking_reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF3099B820659D6300999419 /* parking_reminder.xcdatamodeld */; };
 		BF3099BD20659E2F00999419 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */; };
 		BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */; };
@@ -46,9 +46,9 @@
 		BF03CDB7207E46D300F9B0B4 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		BF03CDB9207E46EA00F9B0B4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BF03CDBB207E471E00F9B0B4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Reminder+CoreDataProperties.swift"; path = "../../Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderSet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderSet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BF03CDD2207E631400F9B0B4 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BF3099B920659D6300999419 /* parking_reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = parking_reminder.xcdatamodel; sourceTree = "<group>"; };
 		BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BFAAE87A20535AA2001AD4F2 /* SetReminderTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTypeButton.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3099BB20659E2F00999419 /* Reminder+CoreDataClass.swift */,
-				BF03CDBE207E553800F9B0B4 /* Reminder+CoreDataProperties.swift */,
+				BF03CDD2207E631400F9B0B4 /* Reminder+CoreDataProperties.swift */,
 				BF03CDC5207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift */,
 				BF03CDCA207E5F0300F9B0B4 /* ReminderSet+CoreDataProperties.swift */,
 				BF016F7B20697AF20006A040 /* ParkingSpot+CoreDataClass.swift */,
@@ -271,6 +271,7 @@
 				BF016F7D20697AF20006A040 /* ParkingSpot+CoreDataClass.swift in Sources */,
 				BF03CDC7207E5AD800F9B0B4 /* ReminderSet+CoreDataClass.swift in Sources */,
 				BFAAE87B20535AA2001AD4F2 /* SetReminderTypeButton.swift in Sources */,
+				BF03CDD4207E631400F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */,
 				BF016F7620684BFA0006A040 /* NavigationViewController.swift in Sources */,
 				BF03CDBA207E46EA00F9B0B4 /* UIColorExtension.swift in Sources */,
 				BFD343B4203B905A0000F2D1 /* TabBarViewController.swift in Sources */,
@@ -285,7 +286,6 @@
 				BFAAE87E20536593001AD4F2 /* Constants.swift in Sources */,
 				BFBFFE65204BEC00004D1242 /* CreateReminderPickDaysViewController.swift in Sources */,
 				BFBFFE5F204A5957004D1242 /* ReminderTableViewCell.swift in Sources */,
-				BF03CDC0207E553800F9B0B4 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

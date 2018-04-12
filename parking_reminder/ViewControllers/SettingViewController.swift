@@ -120,8 +120,15 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let reminder = fetchedRC.object(at: indexPath)
-            context.delete(reminder)
+            let reminders = fetchedRC.object(at: indexPath)
+            let center = UNUserNotificationCenter.current()
+            var reminderIDs = [String]()
+            for case let reminder as Reminder in reminders.reminders {
+                reminderIDs.append(reminder.identifier)
+            }
+            center.removePendingNotificationRequests(withIdentifiers: reminderIDs)
+            context.delete(reminders)
+
             do {
                 try context.save()
             } catch {

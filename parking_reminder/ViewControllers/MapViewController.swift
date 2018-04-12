@@ -40,19 +40,27 @@ class MapViewController: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
 
-        setupLocationManager()
-        setupMapView()
-
-    }
-    
-    func setupLocationManager() {
         self.locationManager = CLLocationManager()
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
-    }
-    
-    func setupMapView() {
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self;
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            
+        }
+        
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        
+        if let lat = UserDefaults.standard.object(forKey: "latitude") as? CLLocationDegrees,
+           let long = UserDefaults.standard.object(forKey: "longitude") as? CLLocationDegrees {
+            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+            let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+        }
+        
+        
+        
         parkButton = UIButton(frame: CGRect(x:0, y: mapView.frame.height * 0.85, width: mapView.frame.width + 10, height: mapView.frame.height * 0.1))
         parkButton.backgroundColor = UIColor(red:0.14, green:0.48, blue:0.63, alpha:0.5)
         parkButton.setTitle("Park", for: .normal)
@@ -61,15 +69,8 @@ class MapViewController: UIViewController {
         parkButton.setTitle("Parked", for: .highlighted)
         parkButton.addTarget(self, action: #selector(MapViewController.parkButtonPressed), for: UIControlEvents.touchUpInside)
         view.addSubview(parkButton)
-        
-        let greenLake = CLLocation(latitude: 47.678596, longitude: -122.324003)
-        let regionRadius: CLLocationDistance = 1000
-        let region = MKCoordinateRegionMakeWithDistance(greenLake.coordinate, regionRadius, regionRadius)
-    
-        mapView.delegate = self
-//        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
     }
+
     
     @objc func parkButtonPressed() {
         //  If Location Services are not enabled, display alert to user.
@@ -109,13 +110,23 @@ extension MapViewController: CLLocationManagerDelegate {
         let alertAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
         alert.addAction(alertAction)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        if let loc = locations.first {
+            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+            let lat = loc.coordinate.latitude
+            let long = loc.coordinate.longitude
+            let location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+            UserDefaults.standard.set(lat, forKey: "latitude")
+            UserDefaults.standard.set(long, forKey: "longitude")
+        }
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
-    }
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // If Annotation is User Location, don't modify this annotation.
         if annotation is MKUserLocation {

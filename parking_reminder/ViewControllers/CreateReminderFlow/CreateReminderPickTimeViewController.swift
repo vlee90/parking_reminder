@@ -66,7 +66,7 @@ class CreateReminderPickTimeViewController: UIViewController {
             reminderSet.addToReminders(reminder)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
             let request = UNNotificationRequest(identifier: reminder.identifier, content: content, trigger: trigger)
-            print(request)
+            
             center.add(request) { (error) in
                 if let err = error {
                     print("Error: \(err): \(err.localizedDescription)")
